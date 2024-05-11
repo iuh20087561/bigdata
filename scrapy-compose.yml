@@ -1,0 +1,16 @@
+services:
+  crawler:
+    image: bookscrapy
+    container_name: bookscrapy
+    restart: on-failure
+    volumes:
+    - bookpy:/usr/src/app
+    networks:
+    - netscrapy
+
+volumes:
+  bookpy:
+    driver: local
+
+networks:
+  netscrapy:
